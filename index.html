@@ -1,312 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahlet Desalegn Asrade | Portfolio</title>
-    <!-- We bring in Google Fonts and FontAwesome Icons -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="https://cloudflare.com">
-    
+    <title>Mahlet’s CV</title>
+    <!-- Animate.css for headline animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
-        /* Modern Design System */
-        :root {
-            --primary: #0f2027;
-            --secondary: #203a43;
-            --accent: #00d2ff;
-            --bg: #f4f7f9;
-            --text: #2d3748;
-            --card-bg: #ffffff;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-        }
-
-        /* Interactive Particle Background Container */
-        .hero-section {
-            position: relative;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            overflow: hidden;
-        }
-
-        #particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: auto;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: -30px auto 60px auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 3;
-        }
-
-        /* Profile Picture Frame */
-        .profile-pic-container {
-            position: relative;
-            width: 140px;
-            height: 140px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-        }
-
-        .profile-pic {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ffffff;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            background-color: #e2e8f0;
-            transition: all 0.5s ease;
-        }
-
-        .profile-pic-container:hover .profile-pic {
-            transform: scale(1.05);
-            border-color: var(--accent);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            font-weight: 700;
-        }
-
-        .expertise-text {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        /* Navigation Buttons */
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .contact-links a.cv-button {
-            background: var(--accent);
-            color: var(--primary);
-        }
-
-        .contact-links a:hover {
-            background: #ffffff;
-            color: var(--secondary);
-            transform: translateY(-3px);
-        }
-
-        /* Cards Layout */
-        .section-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-            transition: transform 0.3s ease;
-        }
-
-        .section-card:hover {
-            transform: translateY(-4px);
-        }
-
-        h2 {
-            color: var(--secondary);
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 35px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .item-row {
-            margin-bottom: 20px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: #1a202c;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .item-sub {
-            font-style: italic;
-            color: #718096;
-            margin-bottom: 6px;
-        }
-
-        /* Skills Badges */
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .badge {
-            background-color: #edf2f7;
-            color: #4a5568;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 12px;
-        }
-
-        th {
-            background-color: #f7fafc;
-            color: #718096;
-            font-weight: 600;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        td {
-            border-bottom: 1px solid #edf2f7;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f8;
+        color: #282843;
+        margin: 0;
+      }
+      h1, h2, h3 {
+        color: #892847;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      table, th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+      }
+      th {
+        background-color: #892847;
+        color: white;
+      }
+      ul li a {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #0073b1;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: transform 0.3s;
+      }
+      ul li a:hover {
+        transform: scale(1.1);
+        background-color: #005582;
+      }
+      ul li a i {
+        margin-right: 8px;
+        font-size: 18px;
+      }
+      /* Navigation bar */
+      nav {
+        background-color: #282843;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      nav a {
+        color: #f4f4f8;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #892847;
+      }
+      section {
+        padding: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Navigation Menu -->
+    <nav>
+      <a href="#profiles">Profiles</a>
+      <a href="#education">Education</a>
+      <a href="#employment">Employment</a>
+      <a href="#projects">Projects</a>
+      <a href="#memberships">Memberships</a>
+      <a href="#skills">Skills</a>
+      <a href="#languages">Languages</a>
+      <a href="#certification">Certification</a>
+    </nav>
 
-    <!-- Hero Header with moving canvas particles -->
-    <div class="hero-section">
-        <canvas id="particle-canvas"></canvas>
-        
-        <div class="hero-content">
-            <div class="profile-pic-container">
-                <img src="profile.jpg" alt="Mahlet Desalegn Asrade" class="profile-pic" onerror="this.src='https://placeholder.com'">
-            </div>
-            <h1>Mahlet Desalegn Asrade</h1>
-            <p class="expertise-text">MSc Student in Climate Change and Water Engineering | Assistant Lecturer | Specialist in Climate Adaptation & GIS</p>
-            
-            <div class="contact-links">
-                <a href="cv.pdf" target="_blank" class="cv-button"><i class="fas fa-file-pdf"></i> Download CV</a>
-                <a href="mailto:mahludesalegn@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                <a href="tel:+213563552640"><i class="fas fa-phone"></i> Call</a>
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://researchgate.net" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
-                <a href="https://google.com" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
-            </div>
-        </div>
-    </div>
+    <section>
+      <h1 class="animate__animated animate__fadeInDown">Mahlet Desalegn Asrade</h1>
+      <h3 class="animate__animated animate__fadeInUp">
+        Assistant Lecturer | MSc Candidate | Researcher in Sustainable & Resilient Infrastructure
+      </h3>
+    </section>
 
-    <div class="container">
+    <section id="profiles">
+      <h2 data-aos="fade-up">Profiles</h2>
+      <ul data-aos="fade-right">
+        <li>
+          <a href="https://scholar.google.com/citations?user=dCPoJPkAAAAJ&hl=en" target="_blank">
+            <i class="fa-solid fa-graduation-cap"></i> Google Scholar
+          </a>
+        </li>
+        <li>
+          <a href="https://www.researchgate.net/profile/Mahlet-Desalegn-Asrade?ev=hdr_xprf" target="_blank">
+            <i class="fa-brands fa-researchgate"></i> ResearchGate
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/mahlet-desalegn-1b56bb333?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+        </li>
+      </ul>
+    </section>
 
-        <!-- About Me Section -->
-        <div class="section-card">
-            <h2><i class="fas fa-user"></i> About Me</h2>
-            <p>I am an ambitious MSc student deeply interested in climate change adaptation, GIS modeling, water resources management, and environmental sustainability. Alongside my studies, I serve as an Assistant Lecturer, helping train the next generation of engineers.</p>
-        </div>
+    <section id="education">
+      <h2 data-aos="fade-up">Education</h2>
+      <table data-aos="fade-left">
+        <tr><th>Dates</th><th>Institution</th><th>Degree</th></tr>
+        <tr><td>Aug 2025 – Present</td><td>University of Tlemcen, Algeria (PAUWES)</td><td>MSc, Climate Change Engineering</td></tr>
+        <tr><td>Oct 2018 – Oct 2024</td><td>University of Gondar, Ethiopia</td><td>BSc, Civil Engineering (Distinction)</td></tr>
+      </table>
+    </section>
 
-        <!-- Education -->
-        <div class="section-card">
-            <h2><i class="fas fa-university"></i> Education</h2>
-            <div class="item-row">
-                <div class="item-header">
-                    <span>University of Tlemcen, Algeria (PAUWES)</span>
-                    <span style="color: var(--accent); font-weight:700;">2025 – Present</span>
-                </div>
-                <div class="item-sub">MSc, Climate Change Engineering (In progress)</div>
-                <ul>
-                    <li>Focus Area: Climate Adaptation & Water Engineering</li>
-                    <li>Full PAUWES scholarship recipient</li>
-                </ul>
-            </div>
-            <hr style="border: 0; border-top: 1px solid #edf2f7; margin: 15px 0;">
-            <div class="item-row">
-                <div class="item-header">
-                    <span>University of Gondar, Ethiopia</span>
-                    <span>2018 – 2024</span>
-                </div>
-                <div class="item-sub">BSc, Civil Engineering – Graduated with Distinction</div>
-                <ul>
-                    <li>Academic Excellence Certificate, 2024</li>
-                </ul>
-            </div>
-        </div>
+    <section id="employment">
+      <h2 data-aos="fade-up">Employment Record</h2>
+      <table data-aos="fade-right">
+        <tr><th>Period</th><th>Organization</th><th>Position</th><th>Summary</th></tr>
+        <tr><td>Nov 2024 – Present</td><td>University of Gondar</td><td>Assistant Lecturer</td><td>Delivered tutorials and supported undergraduate civil engineering students.</td></tr>
+        <tr><td>Nov 2024 – May 2025</td><td>MELCON Construction PLC</td><td>Office Engineer</td><td>Managed project documentation, supervised road construction activities.</td></tr>
+      </table>
+    </section>
 
-        <!-- Employment Record -->
-        <div class="section-card">
-            <h2><i class="fas fa-briefcase"></i> Employment Record</h2>
-            <div class="item-row">
-                <div class="item-header">
-                    <span>University of Gondar — Gondar, Ethiopia</span>
-                    <span style="color: var(--secondary);">2024 – Present</span>
-                </div>
-                <div class="item-sub">Assistant Lecturer</div>
-                <ul>
-                    <li>Deliver tutorials and provide academic support to undergraduate civil engineering students.</li>
-                </ul>
-            </div>
+    <section id="projects">
+      <h2 data-aos="fade-up">Key Projects</h2>
+      <ul data-aos="zoom-in">
+        <li>Trash2Cash (2025) — Digital waste-management platform promoting circular economy.</li>
+        <li>B+G+4 Commercial Building Design, Qwara–Gelegu (2024) — Structural analysis and design using ETABS and AutoCAD.</li>
+        <li>Low-Cement Construction Innovation, Bahir Dar (2024) — Applied local materials to reduce costs and environmental impact.</li>
+      </ul>
+    </section>
+
+    <section id="memberships">
+      <h2 data-aos="fade-up">Memberships & Honours</h2>
+      <ul data-aos="fade-left">
+        <li>Winner — AI Nexus Olympiad, PAU International Conference (2025)</li>
+        <li>PAUWES Scholarship recipient — MSc Programme (2025)</li>
+        <li>Academic Excellence Certificate — University of Gondar (2024)</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2 data-aos="fade-up">Software & Technical Skills</h2>
+      <ul data-aos="fade-right">
+        <li>AutoCAD, ETABS, Civil 3D, Eagle Point, MS Office</li>
+        <li>Python (in progress), GIS (in progress)</li>
+        <li>Structural analysis & design, road construction supervision, project documentation</li>
+      </ul>
+    </section>
+
+    <section id="languages">
+      <h2 data-aos="fade-up">Languages</h2>
+      <table data-aos="fade-left">
+        <tr><th>Language</th><th>Speaking</th><th>Reading/Writing</th></tr>
+        <tr><td>Amharic</td><td>Mother tongue</td><td>Mother tongue</td></tr>
+        <tr><td>English</td><td>Very good</td><td>Very good (university level)</td></tr>
+        <tr><td>German</td><td>B1–B2</td><td>B1–B2</td></tr>
+        <tr><td>French</td><td>A1</td><td>A1</td></tr>
+      </table>
+    </section>
+
+    <section id="certification">
+      <h2 data-aos="fade-up">Certification</h2>
+      <p data-aos="fade-right">I, the undersigned, certify that to the best of my knowledge and belief, this CV correctly describes myself, my qualifications, and my experience.</p>
+      <p data-aos="fade-right">Signature: ___________________________</p>
+      <p data-aos="fade-right">Date: 21/06/2026</p>
+    </section>
+
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
