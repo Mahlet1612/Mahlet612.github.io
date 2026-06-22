@@ -5,181 +5,141 @@
     <title>Mahlet’s CV</title>
     <!-- Animate.css for headline animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- AOS (Animate On Scroll) CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f8;
+        background-color: #ffffff;
         color: #282843;
         margin: 0;
+        padding: 20px;
       }
-      h1, h2, h3 {
+      .profile {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .profile img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 3px solid #892847;
+      }
+      h1, h2 {
         color: #892847;
       }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-      }
-      table, th, td {
+      details {
+        margin: 15px 0;
+        padding: 10px;
         border: 1px solid #ccc;
-        padding: 8px;
+        border-radius: 5px;
+        background: #f9f9f9;
+        transition: all 0.3s ease;
       }
-      th {
-        background-color: #892847;
-        color: white;
+      summary {
+        font-weight: bold;
+        cursor: pointer;
       }
-      ul li a {
+      summary::marker {
+        color: #892847;
+      }
+      .links {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .links a {
         display: inline-block;
         padding: 10px 20px;
         margin: 5px;
-        background-color: #0073b1;
+        background-color: #892847;
         color: white;
         text-decoration: none;
         border-radius: 5px;
         transition: transform 0.3s;
       }
-      ul li a:hover {
+      .links a:hover {
         transform: scale(1.1);
-        background-color: #005582;
+        background-color: #5e1a2f;
       }
-      ul li a i {
-        margin-right: 8px;
-        font-size: 18px;
+      .contact {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
       }
-      /* Navigation bar */
-      nav {
-        background-color: #282843;
-        padding: 10px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-      nav a {
-        color: #f4f4f8;
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      nav a:hover {
-        color: #892847;
-      }
-      section {
-        padding: 20px;
+      .contact p {
+        margin: 5px 0;
       }
     </style>
   </head>
   <body>
-    <!-- Navigation Menu -->
-    <nav>
-      <a href="#profiles">Profiles</a>
-      <a href="#education">Education</a>
-      <a href="#employment">Employment</a>
-      <a href="#projects">Projects</a>
-      <a href="#memberships">Memberships</a>
-      <a href="#skills">Skills</a>
-      <a href="#languages">Languages</a>
-      <a href="#certification">Certification</a>
-    </nav>
-
-    <section>
+    <!-- Profile Section -->
+    <div class="profile">
+      <img src="profile.jpg" alt="Profile Picture"/>
       <h1 class="animate__animated animate__fadeInDown">Mahlet Desalegn Asrade</h1>
       <h3 class="animate__animated animate__fadeInUp">
         Assistant Lecturer | MSc Candidate | Researcher in Sustainable & Resilient Infrastructure
       </h3>
-    </section>
+      <p><em>About Me:</em> Passionate about sustainable infrastructure and climate change engineering, with strong academic and research background. Dedicated to innovation and excellence in civil engineering and resilience studies.</p>
+    </div>
 
-    <section id="profiles">
-      <h2 data-aos="fade-up">Profiles</h2>
-      <ul data-aos="fade-right">
-        <li>
-          <a href="https://scholar.google.com/citations?user=dCPoJPkAAAAJ&hl=en" target="_blank">
-            <i class="fa-solid fa-graduation-cap"></i> Google Scholar
-          </a>
-        </li>
-        <li>
-          <a href="https://www.researchgate.net/profile/Mahlet-Desalegn-Asrade?ev=hdr_xprf" target="_blank">
-            <i class="fa-brands fa-researchgate"></i> ResearchGate
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/mahlet-desalegn-1b56bb333?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn
-          </a>
-        </li>
-      </ul>
-    </section>
+    <!-- Contact Info -->
+    <div class="contact">
+      <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:Mahlet.Desalegn@uog.edu.et">Mahlet.Desalegn@uog.edu.et</a></p>
+      <p><i class="fa-solid fa-phone"></i> Contact: <a href="tel:+251955219762">+251955219762</a>, <a href="tel:+213563552640">+213563 55 26 40</a></p>
+      <p><i class="fa-solid fa-location-dot"></i> Location: Tlemcen, Algeria</p>
+    </div>
 
-    <section id="education">
-      <h2 data-aos="fade-up">Education</h2>
-      <table data-aos="fade-left">
-        <tr><th>Dates</th><th>Institution</th><th>Degree</th></tr>
-        <tr><td>Aug 2025 – Present</td><td>University of Tlemcen, Algeria (PAUWES)</td><td>MSc, Climate Change Engineering</td></tr>
-        <tr><td>Oct 2018 – Oct 2024</td><td>University of Gondar, Ethiopia</td><td>BSc, Civil Engineering (Distinction)</td></tr>
-      </table>
-    </section>
+    <!-- Active Links -->
+    <div class="links">
+      <a href="cv.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> View My CV</a>
+      <a href="https://scholar.google.com/citations?user=dCPoJPkAAAAJ&hl=en" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+      <a href="https://www.researchgate.net/profile/Mahlet-Desalegn-Asrade?ev=hdr_xprf" target="_blank"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>
+      <a href="https://www.linkedin.com/in/mahlet-desalegn-1b56bb333?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    </div>
 
-    <section id="employment">
-      <h2 data-aos="fade-up">Employment Record</h2>
-      <table data-aos="fade-right">
-        <tr><th>Period</th><th>Organization</th><th>Position</th><th>Summary</th></tr>
-        <tr><td>Nov 2024 – Present</td><td>University of Gondar</td><td>Assistant Lecturer</td><td>Delivered tutorials and supported undergraduate civil engineering students.</td></tr>
-        <tr><td>Nov 2024 – May 2025</td><td>MELCON Construction PLC</td><td>Office Engineer</td><td>Managed project documentation, supervised road construction activities.</td></tr>
-      </table>
-    </section>
+    <!-- Collapsible Sections -->
+    <details>
+      <summary><i class="fa-solid fa-graduation-cap"></i> Education</summary>
+      <p>BSc in Civil Engineering (Distinction)</p>
+      <p>MSc in Climate Change Engineering (PAUWES)</p>
+    </details>
 
-    <section id="projects">
-      <h2 data-aos="fade-up">Key Projects</h2>
-      <ul data-aos="zoom-in">
-        <li>Trash2Cash (2025) — Digital waste-management platform promoting circular economy.</li>
-        <li>B+G+4 Commercial Building Design, Qwara–Gelegu (2024) — Structural analysis and design using ETABS and AutoCAD.</li>
-        <li>Low-Cement Construction Innovation, Bahir Dar (2024) — Applied local materials to reduce costs and environmental impact.</li>
-      </ul>
-    </section>
+    <details>
+      <summary><i class="fa-solid fa-briefcase"></i> Employment</summary>
+      <p>Assistant Lecturer — University of Gondar</p>
+      <p>Office Engineer — MELCON Construction PLC</p>
+    </details>
 
-    <section id="memberships">
-      <h2 data-aos="fade-up">Memberships & Honours</h2>
-      <ul data-aos="fade-left">
-        <li>Winner — AI Nexus Olympiad, PAU International Conference (2025)</li>
-        <li>PAUWES Scholarship recipient — MSc Programme (2025)</li>
-        <li>Academic Excellence Certificate — University of Gondar (2024)</li>
-      </ul>
-    </section>
+    <details>
+      <summary><i class="fa-solid fa-lightbulb"></i> Projects</summary>
+      <p>Trash2Cash — Digital waste-management platform for circular economy</p>
+      <p>B+G+4 Commercial Building Design — Structural analysis & design</p>
+      <p>Low-Cement Construction Innovation — Sustainable materials</p>
+    </details>
 
-    <section id="skills">
-      <h2 data-aos="fade-up">Software & Technical Skills</h2>
-      <ul data-aos="fade-right">
-        <li>AutoCAD, ETABS, Civil 3D, Eagle Point, MS Office</li>
-        <li>Python (in progress), GIS (in progress)</li>
-        <li>Structural analysis & design, road construction supervision, project documentation</li>
-      </ul>
-    </section>
+    <details>
+      <summary><i class="fa-solid fa-award"></i> Memberships & Honours</summary>
+      <p>Winner — AI Nexus Olympiad (2025)</p>
+      <p>Scholarship Holder — Pan-African University (PAUWES)</p>
+      <p>Academic Excellence Certificate — University of Gondar (2024)</p>
+      <p>Top Student Award — Civil Engineering BSc</p>
+    </details>
 
-    <section id="languages">
-      <h2 data-aos="fade-up">Languages</h2>
-      <table data-aos="fade-left">
-        <tr><th>Language</th><th>Speaking</th><th>Reading/Writing</th></tr>
-        <tr><td>Amharic</td><td>Mother tongue</td><td>Mother tongue</td></tr>
-        <tr><td>English</td><td>Very good</td><td>Very good (university level)</td></tr>
-        <tr><td>German</td><td>B1–B2</td><td>B1–B2</td></tr>
-        <tr><td>French</td><td>A1</td><td>A1</td></tr>
-      </table>
-    </section>
+    <details>
+      <summary><i class="fa-solid fa-computer"></i> Skills</summary>
+      <p>AutoCAD, ETABS, Civil 3D, Eagle Point, MS Office</p>
+      <p>Python (in progress), GIS (in progress)</p>
+    </details>
 
-    <section id="certification">
-      <h2 data-aos="fade-up">Certification</h2>
-      <p data-aos="fade-right">I, the undersigned, certify that to the best of my knowledge and belief, this CV correctly describes myself, my qualifications, and my experience.</p>
-      <p data-aos="fade-right">Signature: ___________________________</p>
-      <p data-aos="fade-right">Date: 21/06/2026</p>
-    </section>
+    <details>
+      <summary><i class="fa-solid fa-language"></i> Languages</summary>
+      <p>Amharic, English, German, French</p>
+    </details>
 
-    <!-- AOS JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <details>
+      <summary><i class="fa-solid fa-certificate"></i> Certification</summary>
+      <p>Certificate of High Achievement — Civil Engineering BSc</p>
+      <p>Scholarship Holder — Pan-African University</p>
+    </details>
   </body>
 </html>
