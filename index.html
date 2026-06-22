@@ -65,12 +65,14 @@
             z-index: 3;
         }
 
-        /* Animated Profile Picture Frame */
+        /* Profile Picture Frame */
         .profile-pic-container {
             position: relative;
             width: 140px;
             height: 140px;
-            margin: 0 auto 20px auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
 
         .profile-pic {
@@ -102,7 +104,7 @@
             font-weight: 300;
         }
 
-        /* Social Navigation Buttons */
+        /* Navigation Buttons */
         .contact-links {
             display: flex;
             justify-content: center;
@@ -123,7 +125,6 @@
             border: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Special Highlights for the CV Download Button */
         .contact-links a.cv-button {
             background: var(--accent);
             color: var(--primary);
@@ -135,7 +136,7 @@
             transform: translateY(-3px);
         }
 
-        /* Fixed: Always Visible Cards on Mobile and Desktop */
+        /* Cards Layout */
         .section-card {
             background: var(--card-bg);
             padding: 30px;
@@ -144,7 +145,8 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.04);
             transition: transform 0.3s ease;
         }
-.section-card:hover {
+
+        .section-card:hover {
             transform: translateY(-4px);
         }
 
@@ -197,7 +199,7 @@
             margin-bottom: 6px;
         }
 
-        /* Pill Badges */
+        /* Skills Badges */
         .badge-container {
             display: flex;
             flex-wrap: wrap;
@@ -213,7 +215,7 @@
             font-weight: 600;
         }
 
-        /* Data Tables */
+        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -247,10 +249,9 @@
                 <img src="profile.jpg" alt="Mahlet Desalegn Asrade" class="profile-pic" onerror="this.src='https://placeholder.com'">
             </div>
             <h1>Mahlet Desalegn Asrade</h1>
-            <p class="expertise-text">Civil Engineering | Structural Design | Climate-Resilient Infrastructure</p>
+            <p class="expertise-text">MSc Student in Climate Change and Water Engineering | Assistant Lecturer | Specialist in Climate Adaptation & GIS</p>
             
             <div class="contact-links">
-                <!-- Added CV Download Link -->
                 <a href="cv.pdf" target="_blank" class="cv-button"><i class="fas fa-file-pdf"></i> Download CV</a>
                 <a href="mailto:mahludesalegn@gmail.com"><i class="fas fa-envelope"></i> Email</a>
                 <a href="tel:+213563552640"><i class="fas fa-phone"></i> Call</a>
@@ -263,6 +264,12 @@
 
     <div class="container">
 
+        <!-- About Me Section -->
+        <div class="section-card">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>I am an ambitious MSc student deeply interested in climate change adaptation, GIS modeling, water resources management, and environmental sustainability. Alongside my studies, I serve as an Assistant Lecturer, helping train the next generation of engineers.</p>
+        </div>
+
         <!-- Education -->
         <div class="section-card">
             <h2><i class="fas fa-university"></i> Education</h2>
@@ -273,7 +280,8 @@
                 </div>
                 <div class="item-sub">MSc, Climate Change Engineering (In progress)</div>
                 <ul>
-<li>Full PAUWES scholarship recipient</li>
+                    <li>Focus Area: Climate Adaptation & Water Engineering</li>
+                    <li>Full PAUWES scholarship recipient</li>
                 </ul>
             </div>
             <hr style="border: 0; border-top: 1px solid #edf2f7; margin: 15px 0;">
@@ -300,13 +308,5 @@
                 <div class="item-sub">Assistant Lecturer</div>
                 <ul>
                     <li>Deliver tutorials and provide academic support to undergraduate civil engineering students.</li>
-                    <li>Selected for the role on the basis of outstanding academic performance.</li>
                 </ul>
             </div>
-            <hr style="border: 0; border-top: 1px solid #edf2f7; margin: 15px 0;">
-            <div class="item-row">
-                <div class="item-header">
-                    <span>MELCON Construction PLC — Addis Ababa, Ethiopia</span>
-                    <span>2024 – 2025</span>
-                </div>
-                <div class="item-sub">Office Engineer</div>
