@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <title>Mahlet’s CV</title>
-    <!-- Animate.css for headline animations -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
       body {
@@ -14,6 +15,7 @@
         color: #282843;
         margin: 0;
         padding: 20px;
+        padding-bottom: 70px; /* space for bottom nav */
       }
       .profile {
         text-align: center;
@@ -21,9 +23,10 @@
       }
       .profile img {
         width: 160px;
-        height: 160px;
         border-radius: 50%;
         border: 3px solid #892847;
+        max-width: 100%;
+        height: auto;
       }
       h1, h2 {
         color: #892847;
@@ -34,31 +37,26 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         background: #f9f9f9;
-        transition: all 0.3s ease;
       }
       summary {
         font-weight: bold;
         cursor: pointer;
-      }
-      summary::marker {
-        color: #892847;
       }
       .links {
         text-align: center;
         margin-top: 20px;
       }
       .links a {
-        display: inline-block;
-        padding: 10px 20px;
-        margin: 5px;
+        display: block;
+        padding: 12px;
+        margin: 8px auto;
         background-color: #892847;
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        transition: transform 0.3s;
+        max-width: 320px;
       }
       .links a:hover {
-        transform: scale(1.1);
         background-color: #5e1a2f;
       }
       .contact {
@@ -68,6 +66,26 @@
       }
       .contact p {
         margin: 5px 0;
+      }
+      /* Bottom Navigation */
+      .bottom-nav {
+        background-color: #892847;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .bottom-nav a {
+        color: #fff;
+        margin: 0 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .bottom-nav a:hover {
+        color: #f4f4f8;
       }
     </style>
   </head>
@@ -84,9 +102,10 @@
 
     <!-- Contact Info -->
     <div class="contact">
-      <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:Mahlet.Desalegn@uog.edu.et">Mahlet.Desalegn@uog.edu.et</a></p>
-      <p><i class="fa-solid fa-phone"></i> Contact: <a href="tel:+251955219762">+251955219762</a>, <a href="tel:+213563552640">+213563 55 26 40</a></p>
-      <p><i class="fa-solid fa-location-dot"></i> Location: Tlemcen, Algeria</p>
+      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:Mahlet.Desalegn@uog.edu.et">Mahlet.Desalegn@uog.edu.et</a></p>
+      <p><i class="fa-solid fa-phone"></i> <a href="tel:+251955219762">+251955219762</a></p>
+      <p><i class="fa-solid fa-phone"></i> <a href="tel:+213563552640">+213563 55 26 40</a></p>
+      <p><i class="fa-solid fa-location-dot"></i> Tlemcen, Algeria</p>
     </div>
 
     <!-- Active Links -->
@@ -98,26 +117,26 @@
     </div>
 
     <!-- Collapsible Sections -->
-    <details>
+    <details id="education">
       <summary><i class="fa-solid fa-graduation-cap"></i> Education</summary>
       <p>BSc in Civil Engineering (Distinction)</p>
       <p>MSc in Climate Change Engineering (PAUWES)</p>
     </details>
 
-    <details>
+    <details id="employment">
       <summary><i class="fa-solid fa-briefcase"></i> Employment</summary>
       <p>Assistant Lecturer — University of Gondar</p>
       <p>Office Engineer — MELCON Construction PLC</p>
     </details>
 
-    <details>
+    <details id="projects">
       <summary><i class="fa-solid fa-lightbulb"></i> Projects</summary>
       <p>Trash2Cash — Digital waste-management platform for circular economy</p>
       <p>B+G+4 Commercial Building Design — Structural analysis & design</p>
       <p>Low-Cement Construction Innovation — Sustainable materials</p>
     </details>
 
-    <details>
+    <details id="memberships">
       <summary><i class="fa-solid fa-award"></i> Memberships & Honours</summary>
       <p>Winner — AI Nexus Olympiad (2025)</p>
       <p>Scholarship Holder — Pan-African University (PAUWES)</p>
@@ -125,21 +144,34 @@
       <p>Top Student Award — Civil Engineering BSc</p>
     </details>
 
-    <details>
+    <details id="skills">
       <summary><i class="fa-solid fa-computer"></i> Skills</summary>
       <p>AutoCAD, ETABS, Civil 3D, Eagle Point, MS Office</p>
       <p>Python (in progress), GIS (in progress)</p>
     </details>
 
-    <details>
+    <details id="languages">
       <summary><i class="fa-solid fa-language"></i> Languages</summary>
       <p>Amharic, English, German, French</p>
     </details>
 
-    <details>
+    <details id="certification">
       <summary><i class="fa-solid fa-certificate"></i> Certification</summary>
       <p>Certificate of High Achievement — Civil Engineering BSc</p>
       <p>Scholarship Holder — Pan-African University</p>
     </details>
+
+    <!-- Bottom Navigation -->
+    <footer>
+      <nav class="bottom-nav">
+        <a href="#education">Education</a>
+        <a href="#employment">Employment</a>
+        <a href="#projects">Projects</a>
+        <a href="#memberships">Memberships</a>
+        <a href="#skills">Skills</a>
+        <a href="#languages">Languages</a>
+        <a href="#certification">Certification</a>
+      </nav>
+    </footer>
   </body>
 </html>
