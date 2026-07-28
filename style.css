@@ -866,3 +866,49 @@ padding:25px;
 }
 
 }
+
+/* =========================
+Animations
+========================= */
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .8s ease;
+
+}
+
+.visible{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.nav-links.show{
+
+display:flex;
+
+flex-direction:column;
+
+position:absolute;
+
+top:75px;
+
+right:20px;
+
+background:white;
+
+padding:20px;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+gap:18px;
+
+}
